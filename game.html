@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CodeMasters: Mestres da Programação e dos Jogos</title>
+</head>
+<body>
+    <h2>Games</h2>
+    <p>Escolha o nível de dificuldade:</p>
+    <div class="botoes-nivel">
+        <button class="botao-nivel" data-nivel="facil" id="facilButton">Nível Fácil</button>
+        <button class="botao-nivel" data-nivel="medio" id="medioButton">Nível Médio</button>
+        <button class="botao-nivel" data-nivel="dificil" id="dificilButton">Nível Difícil</button>
+        <br><br>
+    </div>
+
+    <footer>
+        <button class="botao-voltar" id="voltarButton">Sair</button>
+    </footer>
+
+    <script>
+        //Adicionando um evento clique aos botões de nível
+        const facilButton = document.getElementById("facilButton");
+        const medioButton = document.getElementById("medioButton");
+        const dificilButton = document.getElementById("dificilButton");
+        const voltarButton = document.getElementById("voltarButton");
+
+        facilButton.addEventListener("click", function()
+        {
+            //Redirecionar para a tela das perguntas de nível fácil
+            window.location.href = "perguntas_game_facil.php";
+        });
+
+        medioButton.addEventListener("click", function()
+        {
+            //Redirecionar para a tela das perguntas de nível médio
+            window.location.href = "perguntas_game_medio.php";
+        });
+
+        dificilButton.addEventListener("click", function()
+        {
+            //Redirecionar para a tela das perguntas de nível difícil
+            window.location.href = "perguntas_game_dificil.php";
+        });
+
+        voltarButton.addEventListener("click", function ()
+        {
+            window.location.href = "menu.php";
+        })
+
+    </script>
+</body>
+</html>
