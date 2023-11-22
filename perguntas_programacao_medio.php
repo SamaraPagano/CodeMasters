@@ -67,16 +67,37 @@ $resultado = $conn->query($sql);
         {
             const numeroPergunta = botao.parentElement.id.replace("pergunta", "");
             const respostaElement = document.getElementById(`resposta${numeroPergunta}`);
-
-            // Exibir a resposta apenas quando o jogador clicar na alternativa
-            respostaElement.style.display = "block";
+            const respostaCorreta = respostaElement.getAttribute('data-resposta');
 
             // Desabilitar os botões após o clique
             const botoesAlternativa = botao.parentElement.getElementsByClassName("alternativa");
-            Array.from(botoesAlternativa).forEach(function (alternativa) 
+            Array.from(botoesAlternativa).forEach(function(alternativa) 
             {
                 alternativa.disabled = true;
             });
+
+            // Verificar se a resposta está correta
+            const respostaUsuario = botao.innerText.trim();
+            const respostaCorretaFormatada = respostaCorreta.trim();
+
+            if (respostaUsuario.toLowerCase() === respostaCorretaFormatada.toLowerCase()) 
+            {
+                // Se a resposta estiver correta, adicionar classe e texto correspondentes
+                respostaElement.classList.add('resposta-correta');
+                respostaElement.innerText = "Resposta Correta";
+            } 
+            else 
+            {
+                // Se a resposta estiver incorreta, adicionar classe e texto correspondentes
+                respostaElement.classList.add('resposta-incorreta');
+                respostaElement.innerText = "Resposta Incorreta";
+            }
+
+            // Exibir a resposta após um curto atraso
+            setTimeout(function() 
+            {
+                respostaElement.style.display = "block";
+            }, 1000);
         }
         
 

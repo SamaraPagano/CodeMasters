@@ -80,6 +80,26 @@ body {
     margin-top: 10px;
     border: none;
 }
+.botao-tema{
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    border: none;
+}
+.startButton{
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    border: none;
+}
 h2 {
     text-align: center;
     color: #333;
@@ -127,5 +147,12 @@ a {
 
 a:hover {
     color: #4caf50;
+}
+.resposta-correta {
+    color: #2ecc71; /* Cor do texto para resposta correta */
+}
+
+.resposta-incorreta {
+    color: #e74c3c; /* Cor do texto para resposta incorreta */
 }
 

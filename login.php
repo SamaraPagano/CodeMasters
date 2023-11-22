@@ -1,11 +1,11 @@
 <?php
-//Iniciar a sessão
+// Iniciar a sessão
 session_start();
 
-//Verificar se o formulário foi submetido
-if ($_SERVER["REQUEST_METHOD"] == "POST")
+// Verificar se o formulário foi submetido
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
-    //Conexão com o banco de dados
+    // Conexão com o banco de dados
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
-    if($conn->connect_error)
+    if ($conn->connect_error) 
     {
         die("Erro na conexão com o banco de dados:" . $conn->connect_error);
     }
@@ -36,22 +36,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         // Verificar a senha
         if (password_verify($senha, $user_senha)) 
         {
-            session_start();
             $_SESSION["user_id"] = $user_id;
             $_SESSION["user_email"] = $user_email;
             header("Location: menu.php"); // Redirecionar para a página do jogo
+            exit(); // Certifique-se de encerrar o script após o redirecionamento
         } 
         else 
         {
-            echo "Senha incorreta. Tente novamente.";
+            $mensagemErro = "Senha incorreta. Tente novamente.";
         }
     } 
     else 
     {
-        echo "Nome de usuário não encontrado. Registre-se primeiro.";
+        $mensagemErro = "Nome de usuário não encontrado. Registre-se primeiro.";
     }
 
-    //Fechar a declaração e a conexão
+    // Fechar a declaração e a conexão
     $stmt->close();
     $conn->close();
 }
@@ -80,10 +80,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     <a href="cadastro.php">Ainda não tem uma conta? Cadastre-se.</a>
 
     <?php
-        if (isset($mensagemErro))
-        {
-            echo "<p>$mensagemErro</p>";
-        }
+    if (isset($mensagemErro)) 
+    {
+        echo "<p>$mensagemErro</p>";
+    }
     ?>
 </body>
 </html>
