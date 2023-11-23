@@ -90,7 +90,7 @@ body {
     margin-top: 10px;
     border: none;
 }
-.startButton{
+.boato-inicio{
     padding: 10px;
     background-color: #4CAF50;
     color: #fff;
@@ -144,15 +144,3 @@ a {
     text-decoration: none;
     color: #333;
 }
-
-a:hover {
-    color: #4caf50;
-}
-.resposta-correta {
-    color: #2ecc71; /* Cor do texto para resposta correta */
-}
-
-.resposta-incorreta {
-    color: #e74c3c; /* Cor do texto para resposta incorreta */
-}
-

@@ -7,19 +7,14 @@
     <title>CodeMasters: Mestres da Programação e dos Jogos</title>
 </head>
 <body>
-    <section>
-        <div class="perfil">
-            <a href="perfil.php">Perfil</a>
-        </div>
-    </section>
 
     <div class="tema">
     <h3>Escolha um tema para começar a jogar</h3>
        <div class="tema">
-        <button class="botao-tema" id="programacaoButton"><img src="programacao.png" alt="Progranacai"></button>
-        <button class="botao-tema" id="gameButton"><img src="game.png" alt=""></button>
-        <button class="botao-tema" id="animeButton"><img src="anime.png" alt=""></button>
-        <button class="botao-tema" id="desenhoButton"><img src="desenho.png" alt=""></button>
+        <button class="botao-tema" id="programacaoButton"><img src="programacao.png" alt="Progranacao"><br><br>Programação</button>
+        <button class="botao-tema" id="gameButton"><img src="game.png" alt="Game"><br><br>Games</button>
+        <button class="botao-tema" id="animeButton"><img src="anime.png" alt="Anime"><br><br>Animes</button>
+        <button class="botao-tema" id="desenhoButton"><img src="desenho.png" alt="Desenho Animado"><br><br>Desenhos Animados</button>
        </div>
     </div>
 
