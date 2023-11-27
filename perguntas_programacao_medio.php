@@ -22,7 +22,7 @@ $resultado = $conn->query($sql);
 $vidasPorFase = [0, 3, 3, 3];
 
 // Obter a fase atual
-$faseAtual = 2; // Defina a fase inicial
+$faseAtual = 2;
 ?>
 
 <!DOCTYPE html>
@@ -121,7 +121,7 @@ $faseAtual = 2; // Defina a fase inicial
 
             function proximaPergunta() 
             {
-                // Adicione lógica para avançar para a próxima pergunta e fase
+                //Lógica para avançar para a próxima pergunta e fase
                 const perguntaAtual = document.getElementById(`pergunta${numeroPerguntaAtual}`);
                 perguntaAtual.style.display = "none";
 
@@ -155,7 +155,7 @@ $faseAtual = 2; // Defina a fase inicial
             function reiniciarJogo() 
             {
                 
-                window.location.href = 'programacao.html';
+                window.location.href = 'menu.php';
             }
 
             // Função de repetição de string (para emojis de coração)

@@ -119,7 +119,7 @@ $faseAtual = 1; // Defina a fase inicial
 
             function proximaPergunta() 
             {
-                // Adicione lógica para avançar para a próxima pergunta e fase
+                // Lógica para avançar para a próxima pergunta e fase
                 const perguntaAtual = document.getElementById(`pergunta${numeroPerguntaAtual}`);
                 perguntaAtual.style.display = "none";
 
@@ -153,7 +153,7 @@ $faseAtual = 1; // Defina a fase inicial
             function reiniciarJogo() 
             {
                 
-                window.location.href = 'programacao.html';
+                window.location.href = 'menu.php';
             }
 
             // Função de repetição de string (para emojis de coração)

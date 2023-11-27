@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>CodeMasters: Mestres da Programação e dos Jogos</title>
 </head>
+
 <body>
     <h2>Programação</h2>
     <p>Escolha o nível de dificuldade:</p>
@@ -28,29 +30,25 @@
         const dificilButton = document.getElementById("dificilButton");
         const voltarButton = document.getElementById("voltarButton");
 
-        facilButton.addEventListener("click", function()
-        {
+        facilButton.addEventListener("click", function() {
             //Redirecionar para a tela das perguntas de nível fácil
             window.location.href = "perguntas_programacao_facil.php";
         });
 
-        medioButton.addEventListener("click", function()
-        {
+        medioButton.addEventListener("click", function() {
             //Redirecionar para a tela das perguntas de nível médio
             window.location.href = "perguntas_programacao_medio.php";
         });
 
-        dificilButton.addEventListener("click", function()
-        {
+        dificilButton.addEventListener("click", function() {
             //Redirecionar para a tela das perguntas de nível difícil
             window.location.href = "perguntas_programacao_dificil.php";
         });
 
-        voltarButton.addEventListener("click", function ()
-        {
+        voltarButton.addEventListener("click", function() {
             window.location.href = "menu.php";
         })
-
     </script>
 </body>
+
 </html>

@@ -155,7 +155,7 @@ $faseAtual = 2; // Defina a fase inicial
             function reiniciarJogo() 
             {
                 
-                window.location.href = 'programacao.html';
+                window.location.href = 'menu.php';
             }
 
             // Função de repetição de string (para emojis de coração)
