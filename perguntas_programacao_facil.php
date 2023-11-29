@@ -119,7 +119,7 @@ $faseAtual = 1; // Defina a fase inicial
 
             function proximaPergunta() 
             {
-                // Lógica para avançar para a próxima pergunta e fase
+                // Adicione lógica para avançar para a próxima pergunta e fase
                 const perguntaAtual = document.getElementById(`pergunta${numeroPerguntaAtual}`);
                 perguntaAtual.style.display = "none";
 

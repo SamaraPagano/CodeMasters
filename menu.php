@@ -8,10 +8,6 @@
 </head>
 <body>
 
-    <div class="perfil">
-        <a href="perfil.php">Perfil</a>
-    </div>
-
     <div class="tema">
     <h3>Escolha um tema para começar a jogar</h3>
        <div class="tema">
