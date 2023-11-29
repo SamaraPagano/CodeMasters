@@ -90,7 +90,17 @@ body {
     margin-top: 10px;
     border: none;
 }
-.boato-inicio{
+.botao-finalizar{
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    border: none;
+}
+#startButton{
     padding: 10px;
     background-color: #4CAF50;
     color: #fff;

@@ -10,7 +10,8 @@ $dbname = "quiz";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-if ($conn->connect_error) {
+if ($conn->connect_error) 
+{
     die("Falha na conexão com o banco de dados:" . $conn->connect_error);
 }
 
@@ -22,7 +23,7 @@ $resultado = $conn->query($sql);
 $vidasPorFase = [0, 3, 3, 3];
 
 // Obter a fase atual
-$faseAtual = 3; // Defina a fase inicial
+$faseAtual = 3;
 ?>
 
 <!DOCTYPE html>
@@ -40,9 +41,11 @@ $faseAtual = 3; // Defina a fase inicial
     <h2>Perguntas de Programação - Nível Difícil</h2>
 
     <?php
-    if ($resultado->num_rows > 0) {
+    if ($resultado->num_rows > 0) 
+    {
         $numeroPerguntaAtual = 1;
         $vidasAtual = 3;
+        $pontuacaoTotal = 0; // Adição da pontuação total
 
         while ($row = $resultado->fetch_assoc()) 
         {
@@ -66,14 +69,18 @@ $faseAtual = 3; // Defina a fase inicial
 
         <div id='info-jogo'>
             <p>Vidas: <span id='vidas'><?php echo str_repeat('&#x1F496;', $vidasAtual); ?></span></p>
+            <p>Pontuação: <span id='pontuacao'>0</span></p> <!-- Adição da exibição da pontuação -->
         </div>
 
         <button class="botao-proxima" id="proximaButton" onclick="proximaPergunta()">Próxima Pergunta</button>
+        <br><br>
+        <button class="botao-finalizar" onclick="exibirPontuacaoFinal()">Finalizar Jogo</button>
 
         <script>
-            let faseAtual = 3;
+            let faseAtual = 2;
             let numeroPerguntaAtual = 1;
             let vidasAtual = 3;
+            let pontuacaoTotal = 0;
 
             function mostrarResposta(botao) 
             {
@@ -83,7 +90,8 @@ $faseAtual = 3; // Defina a fase inicial
 
                 // Desabilitar os botões após o clique
                 const botoesAlternativa = botao.parentElement.getElementsByClassName("alternativa");
-                Array.from(botoesAlternativa).forEach(function (alternativa) {
+                Array.from(botoesAlternativa).forEach(function (alternativa) 
+                {
                     alternativa.disabled = true;
                 });
 
@@ -93,23 +101,25 @@ $faseAtual = 3; // Defina a fase inicial
 
                 if (respostaUsuario.toLowerCase() === respostaCorretaFormatada.toLowerCase()) 
                 {
-                    // Se a resposta estiver correta, não faz nada
+                    // Resposta correta
+                    pontuacaoTotal += 10;
                 } 
                 else 
                 {
-                    // Se a resposta estiver incorreta, reduzir vidas
+                    // Resposta incorreta
                     vidasAtual--;
 
                     // Verificar se atingiu o limite de respostas incorretas
                     if (vidasAtual === 0) 
                     {
                         // Exibir mensagem de Game Over
-                        alert("Game Over! Suas vidas acabaram.");
+                        exibirPontuacaoFinal();
                         reiniciarJogo();
+                        return; o
                     }
                 }
 
-                // Atualizar o texto das vidas na interface do usuário
+                // Atualizar o texto das vidas e pontuação na interface do usuário
                 atualizarInterfaceUsuario();
 
                 // Exibir a resposta após um curto atraso
@@ -121,7 +131,7 @@ $faseAtual = 3; // Defina a fase inicial
 
             function proximaPergunta() 
             {
-                // Adicione lógica para avançar para a próxima pergunta e fase
+                //Lógica para avançar para a próxima pergunta e fase
                 const perguntaAtual = document.getElementById(`pergunta${numeroPerguntaAtual}`);
                 perguntaAtual.style.display = "none";
 
@@ -139,7 +149,7 @@ $faseAtual = 3; // Defina a fase inicial
                 // Reiniciar vidas se necessário
                 if (vidasAtual === 0) 
                 {
-                    vidasAtual = 3; // Reiniciar vidas
+                    vidasAtual = 3;
                 }
 
                 // Atualizar o texto das vidas na interface do usuário
@@ -149,13 +159,20 @@ $faseAtual = 3; // Defina a fase inicial
             function atualizarInterfaceUsuario() 
             {
                 const vidasElement = document.getElementById('vidas');
+                const pontuacaoElement = document.getElementById('pontuacao');
                 vidasElement.innerHTML = str_repeat('&#x1F496;', vidasAtual);
+                pontuacaoElement.innerHTML = pontuacaoTotal;
             }
 
             function reiniciarJogo() 
             {
-                
                 window.location.href = 'menu.php';
+            }
+
+            function exibirPontuacaoFinal() 
+            {
+                alert("Fim do jogo!\n\nPontuação Final: " + pontuacaoTotal);
+                reiniciarJogo();
             }
 
             // Função de repetição de string (para emojis de coração)
@@ -167,7 +184,7 @@ $faseAtual = 3; // Defina a fase inicial
 
     <?php
     } 
-    else
+    else 
     {
         echo "<p>Nenhuma pergunta encontrada para este nível.</p>";
     }

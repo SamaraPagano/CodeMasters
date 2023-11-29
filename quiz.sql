@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09/11/2023 às 00:41
+-- Tempo de geração: 29/11/2023 às 05:00
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -52,15 +52,16 @@ CREATE TABLE `jogadores` (
   `id` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `email` varchar(150) NOT NULL,
-  `senha` varchar(200) NOT NULL
+  `senha` varchar(200) NOT NULL,
+  `pontuacao` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `jogadores`
 --
 
-INSERT INTO `jogadores` (`id`, `nome`, `email`, `senha`) VALUES
-(1, 'Samara', 'samara180305@gmail.com', '$2y$10$TC1bTIbAgXr4095DM5ISfOZNGiwRB73ajofKru.Xt1YGgmZlaPqWa');
+INSERT INTO `jogadores` (`id`, `nome`, `email`, `senha`, `pontuacao`) VALUES
+(1, 'Samara', 'samara180305@gmail.com', '$2y$10$TC1bTIbAgXr4095DM5ISfOZNGiwRB73ajofKru.Xt1YGgmZlaPqWa', 0);
 
 -- --------------------------------------------------------
 
