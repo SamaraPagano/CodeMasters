@@ -16,7 +16,7 @@ if ($conn->connect_error)
 }
 
 // Consulta SQL para obter perguntas de programação de nível fácil
-$sql = "SELECT * FROM perguntas WHERE nivel_id = 1 AND categoria_id = 4";
+$sql = "SELECT * FROM perguntas WHERE nivel_id = 1 AND categoria_id = 3";
 $resultado = $conn->query($sql);
 
 // Defina as vidas por fase
